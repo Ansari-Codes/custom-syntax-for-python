@@ -18,6 +18,27 @@ Portfolio: [https://ansari-codes.github.io/portfolio](https://ansari-codes.githu
 
 ---
 
+## Installation
+
+1. Clone the repo:
+```powershell
+git clone https://github.com/Ansari-Codes/custom-syntax-for-python.git
+cd custom-syntax-for-python
+pip install -e .
+```
+
+2. Via pip:
+```powershell
+pip install custom-syntax-for-python
+```
+
+3. Pip installation using git:
+```powershell
+pip install git+https://github.com/Ansari-Codes/custom-syntax-for-python.git
+```
+
+---
+
 ## Key Principles
 
 1. **Compact Syntax:** Write less code for the same Python functionality.
@@ -41,8 +62,6 @@ multi-line comment
 %
 ```
 
----
-
 ### 2. Built-in Python Functions
 
 Python functions and utilities work as-is.
@@ -51,8 +70,6 @@ Python functions and utilities work as-is.
 print(10)       # Works exactly like Python
 len([1,2,3])    # Python’s len function
 ```
-
----
 
 ### 3. Variables
 
@@ -63,8 +80,6 @@ name <- "Muhammad"
 age <- 15
 x <- 5 + 3
 ```
-
----
 
 ### 4. Conditionals
 
@@ -94,8 +109,6 @@ x > 0:
 ```
 
 > The `:` indicates the start of a condition block, and `:` alone is treated as `else`.
-
----
 
 ### 5. Loops
 
@@ -145,8 +158,6 @@ EXAMPLE:
 
 > `i` is the loop variable, and `iterable` can be any Python iterable.
 
----
-
 ### 6. Functions
 
 Functions are defined using `$` and `[]` instead of `def` and `()`:
@@ -179,8 +190,6 @@ greet()
 greet("Muhammad")
 ```
 
----
-
 ### 7. Imports
 
 Import modules as in Python:
@@ -207,25 +216,6 @@ from time import sleep
 CSP files use the `.csp` extension.
 
 ---
-
-## Installation
-
-1. Clone the repo:
-```powershell
-git clone https://github.com/Ansari-Codes/custom-syntax-for-python.git
-cd custom-syntax-for-python
-pip install -e .
-```
-
-2. Via pip:
-```powershell
-pip install custom-syntax-for-python
-```
-
-3. Pip installation using git:
-```powershell
-pip install git+https://github.com/Ansari-Codes/custom-syntax-for-python.git
-```
 
 ## CLI Usage
 
