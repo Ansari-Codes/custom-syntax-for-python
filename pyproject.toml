@@ -13,7 +13,7 @@ dependencies = []
 Homepage = "https://github.com/Ansari-Codes/custom-syntax-for-python.git"
 
 [tool.setuptools]
-packages = ["csp_lang"]
+packages = ["csp"]
 include-package-data = true
 
 [build-system]
