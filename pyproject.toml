@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csp-lang"
+version = "0.1.0"
+description = "Custom Syntax for Python Language - CSPLang"
+authors = [
+    { name="Muhammad Abubakar Siddique Ansari", email="ansaricodes@gmail.com" }
+]
+readme = "README.md"
+license = { text = "Apache" }
+requires-python = ">=3.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache License",
+    "Operating System :: OS Independent"
+]
+dependencies = []
+
+[project.scripts]
+csp = "csp.csp:main"
