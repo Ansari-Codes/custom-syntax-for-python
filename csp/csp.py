@@ -106,4 +106,3 @@ def main():
         cmd_transpile(args.file, args.output)
     else:
         parser.print_help()
-main()

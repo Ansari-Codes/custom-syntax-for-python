@@ -3,7 +3,7 @@ requires = ["setuptools>=65.5.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "csp-lang"
+name = "csp_lang"
 version = "0.1.0"
 description = "Custom Syntax for Python Language - CSPLang"
 authors = [

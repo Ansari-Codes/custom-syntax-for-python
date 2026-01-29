@@ -29,7 +29,7 @@ pip install -e .
 
 2. Via pip:
 ```powershell
-pip install custom-syntax-for-python
+pip install csp_lang
 ```
 
 3. Pip installation using git:
