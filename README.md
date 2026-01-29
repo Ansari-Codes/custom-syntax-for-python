@@ -49,7 +49,7 @@ pip install git+https://github.com/Ansari-Codes/custom-syntax-for-python.git
 
 ## Syntax Overview
 
-### 1. Comments
+### 1. Comments & Strings
 
 Single-line and multi-line comments are supported:
 
@@ -60,6 +60,21 @@ Single-line and multi-line comments are supported:
 This is a
 multi-line comment
 %
+```
+
+#### Strings
+Strings use backticks for both mutliline or single line.
+Example:
+```r
+string <- `This is single line string`
+print(string)
+string <- `This is multiline
+string spaning many lines long long
+long long text`
+print(string)
+string <- f`Formatted string!
+2 + 2 = {2 + 2}`
+print(string)
 ```
 
 ### 2. Built-in Python Functions
