@@ -1,23 +1,25 @@
-[build-system]
-requires = ["setuptools>=65.5.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "csp_lang"
 version = "0.1.0"
-description = "Custom Syntax for Python Language - CSPLang"
+description = "Custom Syntax for Python Language -- CSPLang"
 authors = [
-    { name="Muhammad Abubakar Siddique Ansari", email="ansaricodes@gmail.com" }
+    { name = "Muhammad Abubakar Siddique Ansari", email = "ansaricodes@gmail.com" }
 ]
 readme = "README.md"
-license = { text = "Apache" }
 requires-python = ">=3.5"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache License",
-    "Operating System :: OS Independent"
-]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Ansari-Codes/custom-syntax-for-python.git"
+
+[tool.setuptools]
+packages = ["csp_lang"]
+include-package-data = true
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+
+build-backend = "setuptools.build_meta"
 
 [project.scripts]
 csp = "csp.csp:main"
