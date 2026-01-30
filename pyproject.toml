@@ -1,6 +1,6 @@
 [project]
 name = "csp_lang"
-version = "0.1.1"
+version = "2.0.0"
 description = "Custom Syntax for Python Language -- CSPLang"
 authors = [
     { name = "Muhammad Abubakar Siddique Ansari", email = "ansaricodes@gmail.com" }

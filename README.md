@@ -1,279 +1,166 @@
+![](https://github.com/Ansari-Codes/custom-syntax-for-python/blob/main/statics/banner_transparent.png?raw=true)
+
 # CSPLang – Custom Syntax for Python Language
+**GITHUB**: https://github.com/Ansari-Codes/custom-syntax-for-python <br>
+**PYPI**: https://pypi.org/project/csp-lang/
 
-**CSPLang** is a compact custom syntax designed for Python. It’s a toy language that works by transforming each line of CSP code into Python code, then executing it. The focus is on **writing less code but doing more work**.
+**CSPLang** is a high-speed, symbolic syntactic wrapper for Python. It transforms a compact, symbol-heavy DSL into executable Python code. Designed with the principle of **"Write less, do more,"** CSPLang turns Python's keyword-heavy structure into a sleek, streamlined experience.
 
-Think about it this way: 
-> What if you run real python, but write it in a bit different way?
-
-Basically, CSP doesn’t block you from using Python’s full ecosystem; it just gives you a syntactic sugar wrapper so your loops, functions, conditionals, and variables can be written in a shorter or more “DSL-like” style.
-
----
-
-## Developer
-
-I am **Muhammad Abubakar Siddique Ansari**, a passionate developer in **Data Science and AI**. I love creating utilities, exploring new programming ideas, and building simple yet powerful tools.
-
-I am currently (2026) a **1st-year ICS student at KIPS College**, Punjab – Pakistan.
-Portfolio: [https://ansari-codes.github.io/portfolio](https://ansari-codes.github.io/portfolio)
+> **The CSPLang Philosophy:** 
+What if you had the full power of the Python ecosystem, but with the minimalist elegance of a functional language?
 
 ---
 
-## Installation
+## 🚀 Key Features (v2.0)
 
-1. Clone the repo:
+* **Recursive One-Liners:** Define functions, loops, and conditions all on a single line.
+* **Context-Aware Parsing:** Intelligently distinguishes between logic colons and data colons (like in dictionaries or list slices).
+* **Symbolic Identity:** Replaces verbose keywords (`def`, `while`, `return`) with intuitive symbols (`$`, `>>`, `->`).
+* **Zero-Overhead Integration:** Use any Python library (`numpy`, `tqdm`, `asyncio`) out of the box.
+
+---
+
+## 🛠 Installation
+
+### Using git
+
 ```powershell
+# Clone and Install
 git clone https://github.com/Ansari-Codes/custom-syntax-for-python.git
 cd custom-syntax-for-python
-pip install -e .
+pip install .
 ```
 
-2. Via pip:
-```powershell
-pip install csp_lang
-```
+### Using pip+git
 
-3. Pip installation using git:
 ```powershell
 pip install git+https://github.com/Ansari-Codes/custom-syntax-for-python.git
 ```
 
----
-
-## Key Principles
-
-1. **Compact Syntax:** Write less code for the same Python functionality.
-2. **Readable & Straightforward:** Easy to understand even if you are new to Python.
-3. **Direct Python Integration:** Most Python functions, utilities, and modules work without changes.
+### From pypi
+```powershell
+pip install csp-lang
+```
 
 ---
 
-## Syntax Overview
+## 📝 Syntax Overview
 
-### 1. Comments & Strings
+### 1. Variables & Assignment
 
-Single-line and multi-line comments are supported:
-
-```python
-# Single-line comment
-
-% 
-This is a
-multi-line comment
-%
-```
-
-#### Strings
-Strings use backticks for both mutliline or single line.
-Example:
-```r
-string <- `This is single line string`
-print(string)
-string <- `This is multiline
-string spaning many lines long long
-long long text`
-print(string)
-string <- f`Formatted string!
-2 + 2 = {2 + 2}`
-print(string)
-```
-
-### 2. Built-in Python Functions
-
-Python functions and utilities work as-is.
+Use the "flow" operator `<-` for assignment.
 
 ```python
-print(10)       # Works exactly like Python
-len([1,2,3])    # Python’s len function
+name <- `Abubakar`
+age  <- 19
+data <- [1, 2, 3]
 ```
 
-### 3. Variables
+### 2. Universal Strings
 
-Use `<-` as the assignment operator:
-
-```r
-name <- "Muhammad"
-age <- 15
-x <- 5 + 3
-```
-
-### 4. Conditionals
-
-CSP replaces `if`, `elif`, and `else` with a simple, readable syntax:
+Forget `f""`, `""`, or `''' '''`. Use backticks for everything. They support multiple lines and escaped backticks (`).
 
 ```python
-x <- 5
+msg <- `This is a 
+multi-line string with a \`backtick\` inside.`
 
-%
-IMPORTANT: Don;t use comments after colon of the conditions
-EXAMPLE:
-    1. Correct code:
-    x>0:
-    2. Buggy code:
-    x>0: #comment
-%
-
-# if x > 0
-x > 0:
-    print("x is positive")
-# elif x == 5
-: x == 5:
-    print("x is exactly 5")
-# else
-:
-    print("other")
+# F-strings work naturally:
+print(f`Hello, {name}!`)
 ```
 
-> The `:` indicates the start of a condition block, and `:` alone is treated as `else`.
+### 3. Conditionals (Implicit If)
 
-### 5. Loops
-
-#### While Loop
-
-Use `>>` for while loops:
+No need to type `if`. A standalone condition ending in a colon is automatically treated as a conditional.
 
 ```python
+x <- 10
 
-%
-IMPORTANT: Don;t use comments after colon of the condition
-EXAMPLE:
-    1. Correct code:
-    x > 0:
-    2. Buggy code:
-    x > 0: #comment
-%
+x > 5:               # This is 'if'
+    print(`Large`)
+: x == 5:            # This is 'elif'
+    print(`Medium`)
+:                    # This is 'else'
+    print(`Small`)
 
-x <- 3
->> x > 0:
-    print(x)
-    x <- x - 1
+# NEW: One-liners are now supported!
+x == 10: print(`Perfect Score`)
 ```
 
-#### For Loop
+### 4. Loops
 
-Use `=>` with `:` replacing `in`:
+* **While:** Use `>>`
+* **For:** Use `=>` (where `:` replaces `in`)
 
 ```python
+# While Loop
+count <- 3
+>> count > 0: 
+    print(count) 
+    count <- count - 1
 
-%
-IMPORTANT: Don;t use comments after colon of the i:iterable:
-EXAMPLE:
-    1. Correct code:
-    x:range(5):
-
-    2. Buggy code:
-    x:range(5): #comment
-%
-
-=> i:[1,2,3]:
-    print(i)
-
-=> j:range(5):
-    print(j)
+# For Loop
+=> i:range(3):
+    print(f`Iteration {i}`)
 ```
 
-> `i` is the loop variable, and `iterable` can be any Python iterable.
+### 5. Functions & Methods
 
-### 6. Functions
-
-Functions are defined using `$` and `[]` instead of `def` and `()`:
+Defined using `$` and `[]`. The `->` symbol acts as the return.
 
 ```python
-
-%
-IMPORTANT: Don;t use comments after colon of the functio definition
-EXAMPLE:
-    1. Correct code:
-    $add[a, b]:
-
-    2. Buggy code:
-    $add[a, b]: #comment
-%
-
+# Standard definition
 $add[a, b]:
-    -> a + b   # return statement
+    -> a + b
 
-$greet[name="User"]:
-    print(f"Hello {name}")
-print(add(1, 1))
-```
-
-Call functions normally:
-
-```python
-print(add(2, 3))
-greet()
-greet("Muhammad")
-```
-
-### 7. Imports
-
-Import modules as in Python:
-
-```python
-import math as mt
-from math import sqrt
-```
-
-If you have tqdm installed, for example:
-```python
-from tqdm import tqdm
-from time import sleep
-=> i:tqdm(range(30)):
-    sleep(0.1)
-```
-
-> Currently, importing other `.csp` files is not supported.
-
----
-
-## File Format
-
-CSP files use the `.csp` extension.
-
----
-
-## CLI Usage
-
-You can run CSP programs or transpile them to Python:
-
-```bash
-# Run directly
-csp run program.csp
-
-# Transpile to Python file
-csp transpile program.csp -o program.py
-python program.py
-
-# run tests
-csp test
+# Works inside classes too!
+class Math:
+    $cube[self, n]: 
+        -> n ** 3
 ```
 
 ---
 
-## Example Program
+## ⚡ Extreme Flexibility (v2.0 Stress Test)
+
+Because CSPLang v2.0 uses a **Recursive Split Strategy**, it can handle complex Python constructs mixed with CSP symbols without breaking.
 
 ```python
-x <- 3
-$fun[a]:
-    print(f"Start {a}")
-    >> a > 0:
-        => i:[1,2]:
-            print("Loop", i)
-        a <- a - 1
-    -> "done"
+# Slicing and Dictionaries work perfectly!
+data <- [10, 20, 30, 40]
+subset <- data[1:3]             # Transpiler ignores the slice colon
+results <- {`val`: subset[0]}    # Transpiler ignores the dict colon
 
-print(fun(x))
+# Complex nesting and one-lining
+$check[n]: 
+    >> n > 0: 
+        n%2==0:
+            print("Even: ", n)
+        :n%2!=0: print("Odd: ", n)
+        :print(n in [1, 2, 3, 4][:2])
+        n <- n - 1
+check(10)
 ```
 
-Output:
+---
 
-```
-Start 3
-Loop 1
-Loop 2
-Loop 1
-Loop 2
-Loop 1
-Loop 2
-done
-```
+## 💻 CLI Usage
+
+| Command | Description |
+| --- | --- |
+| `csp run file.csp` | Transpiles and executes immediately. |
+| `csp transpile file.csp -o out.py` | Converts CSP to a standalone Python file. |
+| `csp test` | Runs the internal test suite. |
+
+---
+
+## 👨‍💻 Developer
+
+I am **Muhammad Abubakar Siddique Ansari**, a 1st-year ICS student at KIPS College, Punjab (Pakistan). I'm passionate about Data Science, AI, and building tools that make developers' lives easier.
+
+**Portfolio:** [ansari-codes.github.io/portfolio](https://ansari-codes.github.io/portfolio)
+
+---
+
+## Logo
+![logo](https://github.com/Ansari-Codes/custom-syntax-for-python/blob/main/statics/logo.png?raw=true)
+---
