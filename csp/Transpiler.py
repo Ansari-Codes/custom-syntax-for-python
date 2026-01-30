@@ -117,7 +117,8 @@ def transpile(code: str) -> str:
         if not line: return ""
 
         # Shorthands
-        line = re.sub(r'(\w+)\s*<-\s*(.+)', r'\1 = \2', line)
+        if "<-" in line:
+            line = re.sub(r'([^<-]+)\s*<-\s*(.+)', r'\1 = \2', line)        
         line = re.sub(r'->\s*(.+)', r'return \1', line)
 
         # 1. Functions ($name[args]: body)
