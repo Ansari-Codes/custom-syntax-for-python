@@ -153,14 +153,6 @@ check(10)
 
 ---
 
-## 👨‍💻 Developer
-
-I am **Muhammad Abubakar Siddique Ansari**, a 1st-year ICS student at KIPS College, Punjab (Pakistan). I'm passionate about Data Science, AI, and building tools that make developers' lives easier.
-
-**Portfolio:** [ansari-codes.github.io/portfolio](https://ansari-codes.github.io/portfolio)
-
----
-
 ## Logo
 ![logo](https://github.com/Ansari-Codes/custom-syntax-for-python/blob/main/statics/logo.png?raw=true)
 ---
